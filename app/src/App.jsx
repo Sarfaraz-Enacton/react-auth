@@ -11,6 +11,8 @@ import ForgotPassword from './pages/Auth/ForgotPassword/ForgotPassword'
 import PasswordEmail from './pages/Auth/PasswordEmail/PasswordEmail'
 import ResetPassword from './pages/Auth/ResetPassword/ResetPassword'
 import ResetDone from './pages/Auth/ResetDone/ResetDone'
+import { QueryClient, QueryClientProvider } from 'react-query'
+import { ReactQueryDevtools } from 'react-query/devtools'
 
 const router = createBrowserRouter([
   {
@@ -31,10 +33,14 @@ const router = createBrowserRouter([
 ])
 
 function App() {
+  // Create a client
+  const queryClient = new QueryClient()
+
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
-    </>
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
   )
 }
 
