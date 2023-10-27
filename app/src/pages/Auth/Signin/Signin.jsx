@@ -7,18 +7,10 @@ import { object, string, ref, boolean } from 'yup'
 
 export default function Signup() {
   const signupValidationSchema = object({
-    name: string().required('Name is required'),
-    surname: string().required('Surname is required'),
     email: string().email('Email is invalid').required('Email is required'),
     password: string()
       .min(6, 'Password must be at least 6 characters')
       .required('password is required'),
-    rptpassword: string()
-      .oneOf([ref('password'), null], 'password must match')
-      .required('Repeat password is required'),
-    checkbox: boolean()
-      .oneOf([true], 'You must agree to the Terms & Conditions')
-      .required('You must agree'),
   })
 
   return (
@@ -35,12 +27,8 @@ export default function Signup() {
         <div className="pt-6 sm:pt-10">
           <Formik
             initialValues={{
-              name: '',
-              surname: '',
               email: '',
               password: '',
-              rptpassword: '',
-              checkbox: false,
             }}
             onSubmit={(values) => {
               console.log(values)

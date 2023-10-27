@@ -8,13 +8,19 @@ export default {
       },
       colors: {
         black: '#171717',
-        white: '#ffffff',
+        white: {
+          DEFAULT: '#ffffff',
+          purple: '#F3F3F7',
+        },
         gray: {
           DEFAULT: '#D8DDE2',
           dark: '#797E82',
           light: '#EEEEF4',
         },
-        purple: '#5F00D9',
+        purple: {
+          DEFAULT: '#5F00D9',
+          light: '#eeeef4',
+        },
       },
       boxShadow: {
         card: '0px 4px 25px 0px rgba(0, 0, 0, 0.12)',

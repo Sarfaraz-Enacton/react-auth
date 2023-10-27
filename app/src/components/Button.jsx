@@ -4,6 +4,7 @@ export default function Button({ name, customClass, variants, type }) {
   const style = {
     gray: 'bg-gray text-gray-dark/60',
     purple: 'bg-purple text-white',
+    light: 'bg-purple-light text-black',
   }
   return (
     <button
